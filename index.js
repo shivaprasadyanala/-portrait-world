@@ -95,7 +95,7 @@ mongoose.connect("mongodb://localhost:27017/image")
     .then(() => {
         app.listen(4000, () => {
 
-            console.log("server is listening on port 3000");
+            console.log("server is listening on port 4000");
         })
     })
     .catch((err) => {
