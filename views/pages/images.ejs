@@ -11,10 +11,10 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <ul>
+        <div class="jumbotron container">
+            <ul class="row">
                 <% images.map((image)=>{%>
-                    <li>
+                    <li class="col">
                         <p>
                             <%=image.title %>
                         </p>
@@ -24,7 +24,11 @@
                         <p>
                             <%=image.heading %>
                         </p>
-                        <img src="<%= image.imageUrl %>" alt="">
+                        <img width="600" height="400" src="<%= image.imageUrl %>" alt="">
+                        <form method="POST" action="/delete/<%= image._id %>?_method=delete">
+                            <button class="btn btn-primary" type="submit" onClick="return confirm('Are you sure you want to delete?')">delete</button>
+                        </form>
+                        <a class="btn btn-primary" href="/edit/<%= image._id %>">edit</a>
                     </li>
                     <% })%>
             </ul>
@@ -36,6 +40,7 @@
     <footer>
         <%- include('../partials/footer') %>
     </footer>
+
 </body>
 
 </html>
