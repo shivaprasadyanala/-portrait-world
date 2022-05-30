@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+
+    <main>
+        <div class="jumbotron container">
+            <ul class="row">
+                <% images.map((image)=>{%>
+                    <li class="col">
+                        <p>
+                            <%=image.title %>
+                        </p>
+                        <p>
+                            <%=image.content %>
+                        </p>
+                        <p>
+                            <%=image.heading %>
+                        </p>
+                        <img width="600" height="400" src="<%= image.imageUrl %>" alt="">
+                        <form method="POST" action="/delete/<%= image._id %>?_method=delete">
+                            <button class="btn btn-primary" type="submit" onClick="return confirm('Are you sure you want to delete?')">delete</button>
+                        </form>
+                        <a class="btn btn-primary" href="/edit/<%= image._id %>">edit</a>
+                    </li>
+                    <% })%>
+            </ul>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+
+</body>
+
+</html>
