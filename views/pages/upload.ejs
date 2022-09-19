@@ -15,19 +15,19 @@
             <form method="post" action="/upload" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="title" required>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">heading</label>
-                    <input type="text" class="form-control" name="heading">
+                    <input type="text" class="form-control" name="heading" required>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">content</label>
-                    <input type="text" class="form-control" name="content">
+                    <input type="text" class="form-control" name="content" required>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">upload</label>
-                    <input type="file" onChange="readURL(this)" class="form-control" name="myImage">
+                    <input type="file" onChange="readURL(this)" class="form-control" name="myImage" required>
                     <img id="img" class="image-area mt-3" src="" alt="">
                 </div>
 
